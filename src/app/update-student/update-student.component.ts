@@ -44,7 +44,7 @@ export class UpdateStudentComponent implements OnInit {
   }
 
   studentsList() {
-    this.router.navigate(['students']);
+    this.router.navigate(['/students']);
   }
 
   addressLocationEnabled() {

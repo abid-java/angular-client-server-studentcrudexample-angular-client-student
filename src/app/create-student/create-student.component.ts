@@ -39,7 +39,7 @@ export class CreateStudentComponent implements OnInit {
   }
 
   studentsList() {
-    this.router.navigate(['students']);
+    this.router.navigate(['/students']);
   }
 
   addressLocationEnabled() {

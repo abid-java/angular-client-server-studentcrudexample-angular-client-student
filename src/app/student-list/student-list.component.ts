@@ -34,11 +34,11 @@ export class StudentListComponent implements OnInit {
   }
 
   studentDetails(studentId: number) {
-    this.router.navigate(['details', studentId]);
+    this.router.navigate(['studentDetails', studentId]);
   }
 
   updateStudent(studentId: number) {
-    this.router.navigate(['update', studentId]);
+    this.router.navigate(['updateStudent', studentId]);
   }
 
 }

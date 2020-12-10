@@ -28,7 +28,7 @@ export class StudentDetailsComponent implements OnInit {
   }
 
   studentsList() {
-    this.router.navigate(['students']);
+    this.router.navigate(['/students']);
   }
 
 }
