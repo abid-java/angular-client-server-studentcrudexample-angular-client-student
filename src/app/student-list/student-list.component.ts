@@ -18,7 +18,7 @@ export class StudentListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadWholeData();
-    console.log('Students List : ' + this.students);
+    console.log('Students List : ' + JSON.stringify(this.students));
   }
 
   loadWholeData() {

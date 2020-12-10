@@ -1,61 +1,61 @@
 <h3>Update Student</h3>
 <div [hidden]="updated" style="width: 400px;">
 
-<form (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="name">First Name : </label>
-    <input type="text" class="form-control" id="firstName" required [(ngModel)]="student.firstName" name="firstName">
-  </div>
-
-  <div class="form-group">
-    <label for="name">Last Name : </label>
-    <input type="text" class="form-control" id="lastName" required [(ngModel)]="student.lastName" name="lastName">
-  </div>
-
-  <div class="form-group">
-    <label for="name">Email Id : </label>
-    <input type="text" class="form-control" id="emailId" required [(ngModel)]="student.emailId" name="emailId">
-  </div>
-
-  <div class="form-group">
-    <label for="name">School Name : </label>
-    <input type="text" class="form-control" id="schoolName" required [(ngModel)]="student.schoolName" name="schoolName">
-  </div>
-
-  <button (click)="addressLocationEnabled()" class="btn btn-primary">Address Location</button>
-
-  <div *ngIf="isAddressEnabled">
+  <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Street : </label>
-      <input type="text" class="form-control" id="street" required [(ngModel)]="student.address.street" name="street">
+      <label for="name"><b>First Name : </b></label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="student.firstName" name="firstName">
     </div>
 
     <div class="form-group">
-      <label for="name">City : </label>
-      <input type="text" class="form-control" id="city" required [(ngModel)]="student.address.city" name="city">
+      <label for="name"><b>Last Name : </b></label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="student.lastName" name="lastName">
     </div>
 
     <div class="form-group">
-      <label for="name">State : </label>
-      <input type="text" class="form-control" id="state" required [(ngModel)]="student.address.state" name="state">
+      <label for="name"><b>Email Id : </b></label>
+      <input type="text" class="form-control" id="emailId" required [(ngModel)]="student.emailId" name="emailId">
     </div>
 
     <div class="form-group">
-      <label for="name">Country : </label>
-      <input type="text" class="form-control" id="country" required [(ngModel)]="student.address.country" name="country">
+      <label for="name"><b>School Name : </b></label>
+      <input type="text" class="form-control" id="schoolName" required [(ngModel)]="student.schoolName" name="schoolName">
+    </div>
+    <br>
+    <br>
+    <div *ngIf="student.address">
+      <label for="name"><b>Address Location : </b></label>
+      <div class="form-group">
+        <label for="name"><b>Street : </b></label>
+        <input type="text" class="form-control" id="street" required [(ngModel)]="student.address.street" name="street">
+      </div>
+
+      <div class="form-group">
+        <label for="name"><b>City : </b></label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="student.address.city" name="city">
+      </div>
+
+      <div class="form-group">
+        <label for="name"><b>State : </b></label>
+        <input type="text" class="form-control" id="state" required [(ngModel)]="student.address.state" name="state">
+      </div>
+
+      <div class="form-group">
+        <label for="name"><b>Country : </b></label>
+        <input type="text" class="form-control" id="country" required [(ngModel)]="student.address.country" name="country">
+      </div>
+
+      <div class="form-group">
+        <label for="name"><b>Zip Code : </b></label>
+        <input type="number" class="form-control" id="zipCode" required [(ngModel)]="student.address.zipCode" name="zipCode">
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="name">Zip Code : </label>
-      <input type="number" class="form-control" id="zipCode" required [(ngModel)]="student.address.zipCode" name="zipCode">
-    </div>
-  </div>
+    <button type="submit" class="btn btn-success">Submit</button>
 
-  <button type="submit" class="btn btn-success">Submit</button>
-
-</form>
+  </form>
 </div>
 
-<div [hidden]="updated">
+<div [hidden]="!updated">
   <h4>Student Updated Successfully</h4>
 </div>

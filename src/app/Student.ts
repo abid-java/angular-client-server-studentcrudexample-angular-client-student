@@ -8,4 +8,8 @@ export class Student {
   schoolName: string;
   address: Address;
   active: boolean;
+
+  constructor() {
+    this.address = new Address();
+  }
 }

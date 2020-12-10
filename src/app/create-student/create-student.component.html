@@ -22,32 +22,37 @@
     <input type="text" class="form-control" id="schoolName" required [(ngModel)]="student.schoolName" name="schoolName">
   </div>
 
-  <button (click)="addressLocationEnabled()" class="btn btn-primary">Address Location</button>
+  <div class="form-group">
+    <label for="name">Is Address available?</label>
+    <input type="checkbox" class="form-control" required (change)="addressLocationEnabled()">
+  </div>
 
   <div *ngIf="isAddressEnabled">
-    <div class="form-group">
-      <label for="name">Street : </label>
-      <input type="text" class="form-control" id="street" required [(ngModel)]="student.address.street" name="street">
-    </div>
+    <div *ngIf="student.address">
+      <div class="form-group">
+        <label for="name">Street : </label>
+        <input type="text" class="form-control" id="street" required [(ngModel)]="student.address.street" name="street">
+      </div>
 
-    <div class="form-group">
-      <label for="name">City : </label>
-      <input type="text" class="form-control" id="city" required [(ngModel)]="student.address.city" name="city">
-    </div>
+      <div class="form-group">
+        <label for="name">City : </label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="student.address.city" name="city">
+      </div>
 
-    <div class="form-group">
-      <label for="name">State : </label>
-      <input type="text" class="form-control" id="state" required [(ngModel)]="student.address.state" name="state">
-    </div>
+      <div class="form-group">
+        <label for="name">State : </label>
+        <input type="text" class="form-control" id="state" required [(ngModel)]="student.address.state" name="state">
+      </div>
 
-    <div class="form-group">
-      <label for="name">Country : </label>
-      <input type="text" class="form-control" id="country" required [(ngModel)]="student.address.country" name="country">
-    </div>
+      <div class="form-group">
+        <label for="name">Country : </label>
+        <input type="text" class="form-control" id="country" required [(ngModel)]="student.address.country" name="country">
+      </div>
 
-    <div class="form-group">
-      <label for="name">Zip Code : </label>
-      <input type="number" class="form-control" id="zipCode" required [(ngModel)]="student.address.zipCode" name="zipCode">
+      <div class="form-group">
+        <label for="name">Zip Code : </label>
+        <input type="number" class="form-control" id="zipCode" required [(ngModel)]="student.address.zipCode" name="zipCode">
+      </div>
     </div>
   </div>
 
@@ -56,6 +61,6 @@
 </form>
 </div>
 
-<div [hidden]="submitted">
+<div [hidden]="!submitted">
   <h4>Student Created Successfully</h4>
 </div>

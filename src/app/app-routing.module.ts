@@ -6,7 +6,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'student', pathMatch: 'full' },
+  { path: '', pathMatch: 'full', component: StudentListComponent },
   { path: 'students', component: StudentListComponent },
   { path: 'addStudent', component: CreateStudentComponent },
   { path: 'updateStudent/:studentId', component: UpdateStudentComponent },
