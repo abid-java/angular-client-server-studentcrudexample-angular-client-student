@@ -17,7 +17,7 @@ export class StudentService {
 
   private deleteApiUrl = 'http://localhost:8080/students/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor( private httpClient: HttpClient ) { }
 
   //create Student Information
   createStudent(student: Object): Observable<Object> {

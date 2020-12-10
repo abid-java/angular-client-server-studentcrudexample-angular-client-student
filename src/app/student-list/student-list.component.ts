@@ -13,8 +13,8 @@ export class StudentListComponent implements OnInit {
 
   students: Observable<Student[]>;
 
-  constructor(private studentService: StudentService,
-    private router: Router) { }
+  constructor( private studentService: StudentService,
+               private router: Router ) { }
 
   ngOnInit(): void {
     this.loadWholeData();
