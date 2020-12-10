@@ -1,1 +1,39 @@
-<p>student-details works!</p>
+<h2>Student Details</h2>>
+<hr/>
+
+<div *ngIf="student">
+  <div>
+    <label><b>First Name : </b></label> {{student.firstName}}
+  </div>
+  <div>
+    <label><b>Last Name : </b></label> {{student.lastName}}
+  </div>
+  <div>
+    <label><b>Email : </b></label> {{student.emailId}}
+  </div>
+  <div>
+    <label><b>School Name : </b></label> {{student.schoolName}}
+  </div>
+  <div *ngIf="student.address">
+    <h3>Address Location</h3>
+    <div>
+      <label><b>Street : </b></label> {{student.address.street}}
+    </div>
+    <div>
+      <label><b>City : </b></label> {{student.address.city}}
+    </div>
+    <div>
+      <label><b>State : </b></label> {{student.address.state}}
+    </div>
+    <div>
+      <label><b>Country : </b></label> {{student.address.country}}
+    </div>
+    <div>
+      <label><b>ZipCode : </b></label> {{student.address.zipCode}}
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="studentsList()" class="btn btn-primary">Students</button>

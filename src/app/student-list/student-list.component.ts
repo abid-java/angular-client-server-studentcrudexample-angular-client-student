@@ -10,9 +10,11 @@ import { StudentService } from "../student.service";
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
+
   students: Observable<Student[]>;
+
   constructor(private studentService: StudentService,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.loadWholeData();
@@ -21,6 +23,22 @@ export class StudentListComponent implements OnInit {
 
   loadWholeData() {
     this.students = this.studentService.getAllStudents();
+  }
+
+  deleteStudent(studentId: number) {
+    this.studentService.deleteStudent(studentId)
+      .subscribe(data => {
+        console.log(data);
+        this.loadWholeData();
+      }, error => console.log(error));
+  }
+
+  studentDetails(studentId: number) {
+    this.router.navigate(['details', studentId]);
+  }
+
+  updateStudent(studentId: number) {
+    this.router.navigate(['update', studentId]);
   }
 
 }

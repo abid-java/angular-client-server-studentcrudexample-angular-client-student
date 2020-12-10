@@ -5,6 +5,7 @@ export class Student {
   firstName: string;
   lastName: string;
   emailId: string;
+  schoolName: string;
   address: Address;
   active: boolean;
 }
