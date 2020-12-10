@@ -35,6 +35,7 @@ export class UpdateStudentComponent implements OnInit {
                        .subscribe(data => {
                         console.log('Updated Student with studentId : ' + this.studentId + ' is ' + JSON.stringify(data));
                         this.student = new Student();
+                        this.studentsList();
                        })
   }
 
